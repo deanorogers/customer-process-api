@@ -22,7 +22,7 @@ spec:
     spec:
       terminationGracePeriodSeconds:
       containers:
-        - name: customer-papi--pod
+        - name: customer-papi-pod
           image: deanorogers/customer-papi:1.0
           imagePullPolicy: Always
           ports:

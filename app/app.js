@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
     // comment this line when not testing
     res.send("No customers have been obtained yet.\n")
 
+/*
     function get(url, callback) {
 
         https.get(url, function (result) {
@@ -32,8 +33,7 @@ app.get('/', (req, res) => {
         result = data;
         res.send(data);
     });
-
-    // res.send(result);
+*/
 
 })
 
