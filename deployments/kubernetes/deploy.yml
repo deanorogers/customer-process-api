@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-papi-deploy
+  labels:
+    app: customer-papi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: customer-papi
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: customer-papi
+    spec:
+      terminationGracePeriodSeconds:
+      containers:
+        - name: customer-papi--pod
+          image: deanorogers/customer-papi:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
