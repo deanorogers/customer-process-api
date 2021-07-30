@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     let result = '{"title":"No books available","author":"Nobody"}';
 
     // comment this line when not testing
-    res.send("No customers have been obtained yet.\n")
+    res.send("No customers have been obtained just yet.\n")
 
 /*
     function get(url, callback) {
