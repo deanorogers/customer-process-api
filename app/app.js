@@ -6,12 +6,11 @@ const app = express();
 app.get('/', (req, res) => {
 
     console.log ('Entering app GET ...');
-    let result = '{"title":"No books available","author":"Nobody"}';
+    let result = '{"message":"Not yet implemented"}';
 
     // comment this line when not testing
-    res.send("No customers have been obtained just yet.\n")
+    // res.send("Just not yet implemented!\n")
 
-/*
     function get(url, callback) {
 
         https.get(url, function (result) {
@@ -28,12 +27,11 @@ app.get('/', (req, res) => {
        console.error(`Encountered an error trying to make a request: ${err.message}`);
     });
 
-    get("http://10.98.162.188:80/books", function (data) {
+    get("http://10.107.15.132:80/customer/1009/accounts", function (data) {
         console.log ('Setting data [' + data + ']');
         result = data;
         res.send(data);
     });
-*/
 
 })
 

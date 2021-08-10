@@ -31,4 +31,12 @@ $ kubectl rollout status deployments/customer-papi-deploy
 # References
 Pluralsight - Getting Started with Kubernetes - Nigel Poulton
 
+## Other useful commands
+
+Access POD, install curl and reach account-system-api service
+```
+$ kubectl exec -it pod_name bash
+# apt-get install -y curl
+# curl curl http://10.107.15.132:80/customer/1009/accounts
+```
 
