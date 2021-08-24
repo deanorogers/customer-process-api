@@ -27,8 +27,16 @@ app.get('/', (req, res) => {
        console.error(`Encountered an error trying to make a request: ${err.message}`);
     });
 
-    get("http://10.107.15.132:80/customer/1009/accounts", function (data) {
+/*
+    get("http://account-sapi.default-subdomain.default.svc.cluster.local:80/customer/1009/accounts", function (data) {
         console.log ('Setting data [' + data + ']');
+        result = data;
+        res.send(data);
+    });
+*/
+
+    get("http://account-sapi-nodeport:80/customer/1009/accounts", function (data) {
+        console.log ('Setting data using Service Name [' + data + ']');
         result = data;
         res.send(data);
     });

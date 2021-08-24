@@ -39,4 +39,29 @@ $ kubectl exec -it pod_name bash
 # apt-get install -y curl
 # curl curl http://10.107.15.132:80/customer/1009/accounts
 ```
+Install Istio and enable in cluster namespace
+```
+-- Download Istio
+-- Add Istio client to PATH
+-- Install Istio with provided client
+$ istioctl install --set profile=demo
+-- check what's installed
+$ kubectl -n istio-system get deploy
+```
 
+Set and switch between kubernetes workspaces
+```
+$ kubectl get ns
+$ kubectl get pods --namespace=my-service-mesh-enabled-ns
+$ kubectl create -f service-mesh-ns.yaml
+$ kubectl config set-context --current --namespace=default
+```
+Enable Istio in namespace
+```
+$ kubectl label namespace <namespace> istio-injection=enabled
+```
+View container logs
+```
+$ kubectl logs -l app=customer-papi
+$ kubectl logs -l app=customer-papi -c istio-proxy
+```
