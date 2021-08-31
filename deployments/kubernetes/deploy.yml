@@ -23,7 +23,7 @@ spec:
       terminationGracePeriodSeconds:
       containers:
         - name: customer-papi-pod
-          image: deanorogers/customer-papi:1.8
+          image: deanorogers/customer-papi:1.10
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

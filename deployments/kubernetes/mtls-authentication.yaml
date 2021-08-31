@@ -1,0 +1,11 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: "authentication=mode"
+  namespace: "service-mesh"
+spec:
+  selector:
+    matchLabels:
+      app: account-sapi
+  mtls:
+    mode: PERMISSIVE

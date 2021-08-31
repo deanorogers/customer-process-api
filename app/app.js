@@ -3,6 +3,13 @@ const https = require('http');
 
 const app = express();
 
+app.get('/health', (req, res) => {
+
+    console.log ('Entering app GET /health ...');
+    let result = '{"message":"Health OK"}';
+    res.send(result);
+});
+
 app.get('/', (req, res) => {
 
     console.log ('Entering app GET ...');

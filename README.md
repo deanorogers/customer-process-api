@@ -37,7 +37,7 @@ Access POD, install curl and reach account-system-api service
 ```
 $ kubectl exec -it pod_name bash
 # apt-get install -y curl
-# curl curl http://10.107.15.132:80/customer/1009/accounts
+# curl http://10.107.15.132:80/customer/1009/accounts
 ```
 Install Istio and enable in cluster namespace
 ```
@@ -62,6 +62,9 @@ $ kubectl label namespace <namespace> istio-injection=enabled
 ```
 View container logs
 ```
-$ kubectl logs -l app=customer-papi
-$ kubectl logs -l app=customer-papi -c istio-proxy
+// get container names on pod
+$ kubectl get pods customer-papi-deploy-856685d9d4-jkr4z -o jsonpath='{.spec.containers[*].name}' --namespace service-mesh
+-- then get logs from both app and sidecar containers
+$ kubectl logs customer-papi-deploy-856685d9d4-jkr4z -c istio-proxy --namespace service-mesh
+$ kubectl logs customer-papi-deploy-856685d9d4-jkr4z -c account-sapi-pod --namespace service-mesh
 ```
